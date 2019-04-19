@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.UserPanelActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+
+
+        <TextView
+            android:id="@+id/menu_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/menu"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30sp" />
+
+        <View
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/menu_text"
+            android:minHeight="1dp"
+
+            />
+        
+        <Button
+            android:id="@+id/user_button"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_below="@+id/menu_text"
+            android:layout_marginTop="120dp"
+            android:layout_marginHorizontal="40dp"
+            android:background="@drawable/user_place_icon"
+            />
+
+        <Button
+            android:id="@+id/statistics_button"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_below="@id/menu_text"
+            android:layout_toRightOf="@id/user_button"
+            android:layout_marginTop="120dp"
+            android:background="@drawable/statistics_icon"
+            />
+
+        <Button
+            android:id="@+id/saving_button"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_below="@+id/user_button"
+            android:layout_marginTop="40dp"
+            android:layout_marginHorizontal="40dp"
+            android:background="@drawable/saving_icon"
+            />
+
+        <Button
+            android:id="@+id/spending_button"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_below="@id/statistics_button"
+            android:layout_toRightOf="@id/user_button"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/spending_icon"
+            />
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>
