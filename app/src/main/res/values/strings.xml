@@ -13,4 +13,11 @@
     <string name="login">Login</string>
     <string name="logar">LOGAR</string>
     <string name="meu_perfil">Meu Perfil</string>
+    <string name="admin">Admin</string>
+    <string name="economia">Economia</string>
+    <string name="gastos">Gastos</string>
+    <string name="estatisticas">Estatísticas</string>
+    <string name="dados_do_morador">Dados do Morador</string>
+    <string name="moradores">Moradores</string>
+    <string name="dados_da_resid_ncia">Dados da Residência</string>
 </resources>

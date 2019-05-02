@@ -19,10 +19,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_login);
 
         this.mViewHolder.goToUserPanelButton = findViewById(R.id.login_button);
+        this.mViewHolder.goToAdminPanelButton = findViewById(R.id.adm_view_button);
         this.mViewHolder.user = findViewById(R.id.user_edit_text);
         this.mViewHolder.password = findViewById(R.id.password_edit_text);
 
         this.mViewHolder.goToUserPanelButton.setOnClickListener(this);
+        this.mViewHolder.goToAdminPanelButton.setOnClickListener(this);
 
     }
 
@@ -43,6 +45,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             startActivity(intent);
             resetTextFields();
 
+        } else if (id == R.id.adm_view_button) {
+            Intent intent = new Intent(this, AdminActivity.class);
+            startActivity(intent);
+            resetTextFields();
         }
     }
 
@@ -50,6 +56,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         EditText user;
         EditText password;
         Button goToUserPanelButton;
+        Button goToAdminPanelButton;
 
     }
 }

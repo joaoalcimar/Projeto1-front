@@ -6,4 +6,37 @@
     android:layout_height="match_parent"
     tools:context=".views.AdminActivity">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/admin_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/admin"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30sp" />
+
+        <Button
+            android:id="@+id/send_warning_button"
+            android:layout_width="200dp"
+            android:layout_height="190dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:background="@drawable/warning_icon"
+
+            />
+
+
+
+
+
+
+
+
+
+
+    </RelativeLayout>
+
 </android.support.constraint.ConstraintLayout>

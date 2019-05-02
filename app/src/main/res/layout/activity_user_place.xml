@@ -6,4 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".views.UserPlaceActivity">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/place_view_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dados_da_resid_ncia"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30sp" />
+
+
+
+
+
+
+
+
+
+    </RelativeLayout>
+
 </android.support.constraint.ConstraintLayout>

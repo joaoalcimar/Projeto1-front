@@ -6,4 +6,25 @@
     android:layout_height="match_parent"
     tools:context=".views.StatisticsActivity">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/statistics_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/estatisticas"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30sp" />
+
+
+
+
+
+
+
+
+    </RelativeLayout>
+
 </android.support.constraint.ConstraintLayout>
