@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.UserPlaceActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+
+
+        <TextView
+            android:id="@+id/menu_meus_imoveis"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/meus_im_veis"
+            android:textColor="@color/colorPrimary"
+            android:textSize="30sp" />
+
+        <View
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:minHeight="1dp"
+            />
+
+        <Button
+            android:id="@+id/register_button"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="120dp"
+            android:layout_marginHorizontal="30dp"
+            android:background="@drawable/register_button"
+            />
+
+        <Button
+            android:id="@+id/edit_places_button"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_below="@id/register_button"
+            android:background="@drawable/edit_button"
+            />
+
+        <Button
+            android:id="@+id/places_list_button"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_below="@id/edit_places_button"
+            android:background="@drawable/houses_list_button3"
+            />
+
+
+    </RelativeLayout>
+
+
+
+
+</android.support.constraint.ConstraintLayout>
