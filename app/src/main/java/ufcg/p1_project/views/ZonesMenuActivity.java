@@ -2,13 +2,13 @@ package ufcg.p1_project.views;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import ufcg.p1_project.*;
+import ufcg.p1_project.R;
 
-public class EditPlaceActivity extends AppCompatActivity {
+public class ZonesMenuActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_place);
+        setContentView(R.layout.activity_zones_menu);
     }
 }

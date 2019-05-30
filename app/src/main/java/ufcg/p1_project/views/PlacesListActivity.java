@@ -1,49 +1,64 @@
 package ufcg.p1_project.views;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
 import java.util.ArrayList;
 
 import ufcg.p1_project.R;
+import ufcg.p1_project.classes.Place;
 
 public class PlacesListActivity extends AppCompatActivity{
 
     private PlacesListActivity.ViewHolder mViewHolder = new PlacesListActivity.ViewHolder();
-    public static ArrayList<String> meusImoveis = new ArrayList<String>();
+    public static ArrayList<Place> meusImoveis = new ArrayList<Place>();
+
+    //limpar essa seboseira dps
+    public RegisterUserActivity reg = new RegisterUserActivity();
+    public UserPlaceActivity upl = new UserPlaceActivity();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_places_list);
 
+        reg.loadMap();
+        meusImoveis = reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis();
+
         mViewHolder.listaImoveis = findViewById(R.id.lv_places);
 
-        preencherDados();
+        ArrayList<String> imoveisListView = preencherListView();
 
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, meusImoveis);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, imoveisListView);
+
+
 
         mViewHolder.listaImoveis.setAdapter(arrayAdapter);
+        mViewHolder.listaImoveis.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Intent intent = new Intent(parent.getContext(), ZonesListActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
 
-    private void preencherDados(){
-
-        mViewHolder.dados.add("Imóvel 1: Rua João Pessoa n131");
-        mViewHolder.dados.add("Imóvel 2: Rua Santa Fé n1023");
-        mViewHolder.dados.add("Imóvel 3: Rua João Pessoa n95 apt 303");
-        mViewHolder.dados.add("Imóvel 4: Rua Estácio de Sá n786");
+    private ArrayList<String> preencherListView(){
+        ArrayList<String> temporaryList = new ArrayList<>();
+        for(int i = 0; i < meusImoveis.size();i++){
+            temporaryList.add(meusImoveis.get(i).getNome());
+        }
+        return temporaryList;
 
     }
-
-
-    public void adicionarNovoItem(String pseudoEndereco){
-        meusImoveis.add(pseudoEndereco);
-    }
-
 
     private static class ViewHolder{
         ListView listaImoveis;

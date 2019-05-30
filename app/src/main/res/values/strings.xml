@@ -25,5 +25,8 @@
     <string name="lista_de_im_veis">Lista de Imóveis</string>
     <string name="endere_o">Endereço</string>
     <string name="nome">Nome</string>
+    <string name="zonas">Zonas</string>
+    <string name="registrar">Registrar</string>
+    <string name="cadastro">Cadastro</string>
 
 </resources>

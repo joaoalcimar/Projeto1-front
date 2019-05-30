@@ -12,6 +12,10 @@ public class UserPlaceActivity extends AppCompatActivity implements View.OnClick
 
     private ViewHolder mViewHolder = new ViewHolder();
 
+    // limpar essa seboseira dps
+
+    public static String loggedUser ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,13 +25,16 @@ public class UserPlaceActivity extends AppCompatActivity implements View.OnClick
 
         this.mViewHolder.goToRegisterButton.setOnClickListener(this);
 
-        this.mViewHolder.goToEditPlacesButton = findViewById(R.id.edit_places_button);
-
-        this.mViewHolder.goToEditPlacesButton.setOnClickListener(this);
-
         this.mViewHolder.goToPlacesListButton = findViewById(R.id.places_list_button);
 
         this.mViewHolder.goToPlacesListButton.setOnClickListener(this);
+
+        this.mViewHolder.goToChangePlaceInfoButton = findViewById(R.id.change_place_info);
+
+        this.mViewHolder.goToChangePlaceInfoButton.setOnClickListener(this);
+
+
+
     }
 
     @Override
@@ -45,19 +52,25 @@ public class UserPlaceActivity extends AppCompatActivity implements View.OnClick
             startActivity(intent);
 
 
-        }else if (id == R.id.edit_places_button) {
-
-            Intent intent = new Intent(this, EditPlaceActivity.class);
+        }else if( id == R.id.change_place_info){
+            Intent intent = new Intent(this, EditPlaceInfoActivity.class);
             startActivity(intent);
 
         }
     }
 
+    public static String getLoggedUser() {
+        return loggedUser;
+    }
+
+    public static void setLoggedUser(String loggedUser) {
+        UserPlaceActivity.loggedUser = loggedUser;
+    }
 
     private static class ViewHolder {
         Button goToRegisterButton;
-        Button goToEditPlacesButton;
         Button goToPlacesListButton;
+        Button goToChangePlaceInfoButton;
 
     }
 

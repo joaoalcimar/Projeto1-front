@@ -16,7 +16,9 @@
             android:layout_height="wrap_content"
             android:text="@string/admin"
             android:textColor="@color/colorPrimary"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            android:layout_centerHorizontal="true"
+            />
 
         <Button
             android:id="@+id/send_warning_button"

@@ -6,4 +6,72 @@
     android:layout_height="match_parent"
     tools:context=".views.ZonesListActivity">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        >
+
+
+        <TextView
+            android:id="@+id/zonas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/zonas"
+            android:textColor="@color/colorPrimary"
+            android:layout_centerHorizontal="true"
+            android:textSize="30sp" />
+
+        <View
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:minHeight="1dp"
+            />
+
+
+        <Button
+            android:id="@+id/bathroom_button"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="80dp"
+            android:background="@drawable/bathroom_button"
+            />
+
+        <Button
+            android:id="@+id/kitchen_button"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginHorizontal="40dp"
+            android:layout_marginTop="60dp"
+            android:layout_below="@id/bathroom_button"
+            android:background="@drawable/kitchen_icon"
+            />
+
+        <Button
+            android:id="@+id/garden_button"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+
+            android:layout_marginTop="80dp"
+            android:layout_toRightOf="@id/bathroom_button"
+            android:background="@drawable/garden_button"
+            />
+
+        <Button
+            android:id="@+id/laundry_button"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="60dp"
+
+            android:layout_toRightOf="@id/kitchen_button"
+            android:layout_below="@id/garden_button"
+            android:background="@drawable/laundry_button"
+            />
+
+
+    </RelativeLayout>
+
+
+
 </android.support.constraint.ConstraintLayout>

@@ -1,22 +1,23 @@
 package ufcg.p1_project.views;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import ufcg.p1_project.views.PlacesListActivity;
+import android.widget.Toast;
 
 import ufcg.p1_project.R;
+import ufcg.p1_project.classes.Place;
+
 
 public class RegisterPlaceActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ViewHolder mViewHolder = new ViewHolder();
 
-    // implementação temporaria
-
-    private PlacesListActivity temporario = new PlacesListActivity();
+    //limpar essa seboseira dps
+    public RegisterUserActivity reg = new RegisterUserActivity();
+    public UserPlaceActivity upl = new UserPlaceActivity();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,14 +38,44 @@ public class RegisterPlaceActivity extends AppCompatActivity implements View.OnC
     public void onClick(View v) {
         int id = v.getId();
         if (id == R.id.register_new_place_button) {
-            //implementacao temporaria
-            String value = this.mViewHolder.nome.getText().toString() + ": ";
-            value += this.mViewHolder.rua.getText().toString() + " n";
-            value += this.mViewHolder.numero.getText().toString();
+            if(mViewHolder.nome.getText().equals("") || mViewHolder.rua.getText().equals("") || mViewHolder.numero.getText().equals("")
+                    || mViewHolder.bairro.getText().equals("") || mViewHolder.custoLitro.getText().equals("")){
+                alert("Preencha todos os campos!");
 
-            temporario.adicionarNovoItem(value);
+            }else {
+                Place newPlace = new Place();
+                assemblyPlace(newPlace);
 
+                reg.loadMap();
+                reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().add(newPlace);
+                reg.saveMap();
+                alert(newPlace.getNome() + " cadastrado com sucesso!");
+
+                resetTextFields();
+            }
         }
+    }
+
+    public void alert(String message){
+        Toast.makeText(this,message,Toast.LENGTH_LONG).show();
+    }
+
+    public void assemblyPlace(Place newPlace){
+        newPlace.setNome(mViewHolder.nome.getText().toString());
+        newPlace.setRua(mViewHolder.rua.getText().toString());
+        newPlace.setBairro(mViewHolder.bairro.getText().toString());
+        newPlace.setNumero(mViewHolder.numero.getText().toString());
+        newPlace.setCustoLitro((mViewHolder.custoLitro.getText().toString()));
+    }
+
+    private void resetTextFields(){
+
+        this.mViewHolder.nome.setText("");
+        this.mViewHolder.rua.setText("");
+        this.mViewHolder.numero.setText("");
+        this.mViewHolder.bairro.setText("");
+        this.mViewHolder.custoLitro.setText("");
+
     }
 
     private static class ViewHolder{

@@ -19,7 +19,9 @@
             android:layout_height="wrap_content"
             android:text="@string/lista_de_im_veis"
             android:textColor="@color/colorPrimary"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            android:layout_centerHorizontal="true"
+            />
 
         <ListView
             android:id="@+id/lv_places"

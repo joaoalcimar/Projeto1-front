@@ -6,28 +6,59 @@
     android:layout_height="match_parent"
     tools:context=".views.MainActivity">
 
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="138dp"
+        tools:layout_editor_absoluteY="113dp"
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:textSize="40sp"
-            android:textColor="@color/colorPrimary"
-            android:layout_marginBottom="120dp"
-            android:layout_alignBottom="@id/login_view_button"
-            android:text="@string/poup_gua"/>
+        >
 
-        <Button
-            android:id="@+id/login_view_button"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_centerHorizontal="true"
+        <RelativeLayout
+            android:layout_width="350dp"
+            android:layout_height="500dp"
             android:layout_centerInParent="true"
-            android:background="@drawable/login_button"
+            android:background="@drawable/blue_border"
+            >
 
+            <TextView
+                android:id="@+id/poupagua_tv"
+                android:layout_width="200sp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="120dp"
+                android:textSize="40sp"
+                android:text="@string/poup_gua"
+
+
+                />
+
+            <Button
+                android:id="@+id/toLogin_button"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="60dp"
+                android:layout_below="@id/poupagua_tv"
+                android:text="@string/logar"
+
+                />
+
+            <Button
+                android:id="@+id/toRegister_button"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/toLogin_button"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:text="@string/registrar"
+
+                />
+
+
+
+        </RelativeLayout>
             />
 
 
