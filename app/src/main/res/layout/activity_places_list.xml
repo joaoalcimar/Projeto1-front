@@ -23,16 +23,17 @@
             android:layout_centerHorizontal="true"
             />
 
+
         <ListView
             android:id="@+id/lv_places"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/lista_de_imoveis_text"
-            android:paddingTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/lista_de_imoveis_text"
+
             >
 
-
         </ListView>
+
 
 
 

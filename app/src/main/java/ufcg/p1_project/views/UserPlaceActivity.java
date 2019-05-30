@@ -29,9 +29,9 @@ public class UserPlaceActivity extends AppCompatActivity implements View.OnClick
 
         this.mViewHolder.goToPlacesListButton.setOnClickListener(this);
 
-        this.mViewHolder.goToChangePlaceInfoButton = findViewById(R.id.change_place_info);
-
-        this.mViewHolder.goToChangePlaceInfoButton.setOnClickListener(this);
+//        this.mViewHolder.goToChangePlaceInfoButton = findViewById(R.id.change_place_info);
+//
+//        this.mViewHolder.goToChangePlaceInfoButton.setOnClickListener(this);
 
 
 
@@ -52,9 +52,9 @@ public class UserPlaceActivity extends AppCompatActivity implements View.OnClick
             startActivity(intent);
 
 
-        }else if( id == R.id.change_place_info){
-            Intent intent = new Intent(this, EditPlaceInfoActivity.class);
-            startActivity(intent);
+//        }else if( id == R.id.change_place_info){
+//            Intent intent = new Intent(this, EditPlaceInfoActivity.class);
+//            startActivity(intent);
 
         }
     }

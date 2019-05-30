@@ -1,5 +1,6 @@
 package ufcg.p1_project.views;
 
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -20,6 +21,7 @@ public class RegisterUserActivity extends AppCompatActivity implements View.OnCl
     private String password;
     private String confirmPassword;
 
+
     public static Map<String, User> usersData = new HashMap<String, User>();
     public static Properties properties = new Properties();
 
@@ -35,6 +37,7 @@ public class RegisterUserActivity extends AppCompatActivity implements View.OnCl
         this.mViewHolder.userEt = findViewById(R.id.registerUser_et);
         this.mViewHolder.passwordEt = findViewById(R.id.password_et);
         this.mViewHolder.confirmPasswordEt = findViewById(R.id.confirmPassword_et);
+
 
 
     }
@@ -102,7 +105,7 @@ public class RegisterUserActivity extends AppCompatActivity implements View.OnCl
             properties.load(new FileInputStream("data.properties"));
 
             for (String key : properties.stringPropertyNames()) {
-                usersData.put(key, (User) properties.get(key) );
+                usersData.put(key, (User) properties.get(key));
             }
         }catch (IOException i){
             i.printStackTrace();

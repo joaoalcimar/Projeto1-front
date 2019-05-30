@@ -22,12 +22,6 @@
             android:layout_centerHorizontal="true"
             android:textSize="30sp" />
 
-        <View
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:minHeight="1dp"
-            />
-
 
         <Button
             android:id="@+id/bathroom_button"

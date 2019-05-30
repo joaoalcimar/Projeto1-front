@@ -22,11 +22,6 @@
             android:layout_centerHorizontal="true"
             android:textSize="30sp" />
 
-        <View
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:minHeight="1dp"
-            />
 
         <Button
             android:id="@+id/register_button"
@@ -49,17 +44,6 @@
             android:background="@drawable/houses_list_button3"
             />
 
-        <Button
-            android:id="@+id/change_place_info"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_below="@id/places_list_button"
-            android:layout_marginHorizontal="30dp"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/edit_button"
-
-
-            />
 
 
     </RelativeLayout>

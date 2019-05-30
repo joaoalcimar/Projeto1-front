@@ -1,5 +1,7 @@
 package ufcg.p1_project.classes;
 
+import java.util.ArrayList;
+
 public class Place {
 
     private String nome;
@@ -7,7 +9,15 @@ public class Place {
     private String numero;
     private String bairro;
     private String custoLitro;
+    private ArrayList<Zone> zonesList = new ArrayList();
 
+    public ArrayList<Zone> getZonesList() {
+        return zonesList;
+    }
+
+    public void setZonesList(ArrayList zonesList) {
+        this.zonesList = zonesList;
+    }
 
     public String getNome() {
         return nome;

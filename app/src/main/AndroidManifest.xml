@@ -11,18 +11,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".views.EditZoneActivity"></activity>
+        <activity android:name=".views.BathroomPanelActivity"></activity>
+        <activity android:name=".views.BathroomEditActivity" />
+        <activity android:name=".views.EditZoneActivity" />
+        <activity android:name=".views.KitchenPanelActivity" />
         <activity android:name=".views.ZonesMenuActivity" />
-        <activity android:name=".views.LaundryActivity" />
-        <activity android:name=".views.KitchenActivity" />
-        <activity android:name=".views.GardenActivity" />
-        <activity android:name=".views.BathroomActivity" />
         <activity android:name=".views.RegisterUserActivity" />
         <activity android:name=".views.ZonesListActivity" />
         <activity android:name=".views.PlacesListActivity" />
         <activity android:name=".views.EditPlaceInfoActivity" />
         <activity android:name=".views.RegisterPlaceActivity" />
-        <activity android:name=".views.AdminActivity" />
         <activity android:name=".views.UserPlaceActivity" />
         <activity android:name=".views.StatisticsActivity" />
         <activity android:name=".views.LoginActivity" />
@@ -34,5 +32,7 @@
             </intent-filter>
         </activity>
     </application>
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
 </manifest>

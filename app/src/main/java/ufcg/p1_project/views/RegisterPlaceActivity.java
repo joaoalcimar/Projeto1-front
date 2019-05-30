@@ -38,8 +38,9 @@ public class RegisterPlaceActivity extends AppCompatActivity implements View.OnC
     public void onClick(View v) {
         int id = v.getId();
         if (id == R.id.register_new_place_button) {
-            if(mViewHolder.nome.getText().equals("") || mViewHolder.rua.getText().equals("") || mViewHolder.numero.getText().equals("")
-                    || mViewHolder.bairro.getText().equals("") || mViewHolder.custoLitro.getText().equals("")){
+            if(mViewHolder.nome.getText().toString().equals("") || mViewHolder.rua.getText().toString().equals("") ||
+                    mViewHolder.numero.getText().toString().equals("") || mViewHolder.bairro.getText().toString().equals("") ||
+                    mViewHolder.custoLitro.getText().toString().equals("")){
                 alert("Preencha todos os campos!");
 
             }else {

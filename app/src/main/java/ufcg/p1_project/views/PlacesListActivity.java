@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -19,6 +20,7 @@ public class PlacesListActivity extends AppCompatActivity{
     public static ArrayList<Place> meusImoveis = new ArrayList<Place>();
 
     //limpar essa seboseira dps
+    public ZonesMenuActivity zome = new ZonesMenuActivity();
     public RegisterUserActivity reg = new RegisterUserActivity();
     public UserPlaceActivity upl = new UserPlaceActivity();
 
@@ -34,8 +36,7 @@ public class PlacesListActivity extends AppCompatActivity{
 
         ArrayList<String> imoveisListView = preencherListView();
 
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, imoveisListView);
-
+        final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, imoveisListView);
 
 
         mViewHolder.listaImoveis.setAdapter(arrayAdapter);
@@ -43,11 +44,17 @@ public class PlacesListActivity extends AppCompatActivity{
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Intent intent = new Intent(parent.getContext(), ZonesListActivity.class);
+                zome.setImovelAtual(arrayAdapter.getItem(position).toString());
+
+                Intent intent = new Intent(parent.getContext(), ZonesMenuActivity.class);
                 startActivity(intent);
             }
         });
 
+    }
+
+    public void alert(String message){
+        Toast.makeText(this,message,Toast.LENGTH_LONG).show();
     }
 
 
