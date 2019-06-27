@@ -2,13 +2,18 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     tools:context=".views.RegisterPlaceActivity">
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         >
 
@@ -26,7 +31,7 @@
 
         <TextView
             android:id="@+id/nome_imovel_text"
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/registrar_imoveis_text"
             android:text="@string/nome"
@@ -37,7 +42,7 @@
 
         <EditText
             android:id="@+id/nome_imovel_et"
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/nome_imovel_text"
             />
@@ -45,7 +50,7 @@
 
         <TextView
             android:id="@+id/rua_imovel_text"
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/nome_imovel_et"
             android:text="Rua"
@@ -56,7 +61,7 @@
 
         <EditText
             android:id="@+id/rua_imovel_et"
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/rua_imovel_text"
 
@@ -64,7 +69,7 @@
 
         <TextView
             android:id="@+id/numero_imovel_text"
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/rua_imovel_et"
             android:text="Número"
@@ -75,7 +80,7 @@
 
         <EditText
             android:id="@+id/numero_imovel_et"
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/numero_imovel_text"
             android:inputType="number"
@@ -84,7 +89,7 @@
 
         <TextView
             android:id="@+id/bairro_imovel_text"
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/numero_imovel_et"
             android:text="Bairro"
@@ -95,7 +100,7 @@
 
         <EditText
             android:id="@+id/bairro_imovel_et"
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/bairro_imovel_text"
 
@@ -103,7 +108,7 @@
 
         <TextView
             android:id="@+id/custo_litro_imovel_text"
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/bairro_imovel_et"
             android:text="Custo do litro de água"
@@ -114,7 +119,7 @@
 
         <EditText
             android:id="@+id/custo_litro_imovel_et"
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/custo_litro_imovel_text"
             android:inputType="numberDecimal"

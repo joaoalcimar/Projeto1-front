@@ -1,6 +1,11 @@
 package ufcg.p1_project.views;
 
 import android.content.Intent;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
+import android.support.constraint.ConstraintLayout;
+import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +14,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import ufcg.p1_project.R;
+import ufcg.p1_project.data.UserDataOpenHelper;
+import ufcg.p1_project.dominio.repositorio.LoginRepositorio;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -29,11 +36,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         this.mViewHolder.userEt = findViewById(R.id.user_edit_text);
         this.mViewHolder.passwordEt = findViewById(R.id.password_edit_text);
 
-
         this.mViewHolder.goToUserPlaceButton.setOnClickListener(this);
 
     }
-
 
     private void resetTextFields(){
 
