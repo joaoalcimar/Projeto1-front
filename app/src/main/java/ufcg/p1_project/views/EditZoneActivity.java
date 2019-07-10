@@ -20,7 +20,14 @@ public class EditZoneActivity extends AppCompatActivity implements View.OnClickL
         this.mViewHolder.goToEditBathroomButton = findViewById(R.id.edit_bathroom_button);
         this.mViewHolder.goToEditBathroomButton.setOnClickListener(this);
 
+        this.mViewHolder.goToEditGardenButton = findViewById(R.id.edit_garden_button);
+        this.mViewHolder.goToEditGardenButton.setOnClickListener(this);
 
+        this.mViewHolder.goToEditKitchenButton = findViewById(R.id.edit_kitchen_button);
+        this.mViewHolder.goToEditKitchenButton.setOnClickListener(this);
+
+        this.mViewHolder.goToEditLaundryButton = findViewById(R.id.edit_laundry_button);
+        this.mViewHolder.goToEditLaundryButton.setOnClickListener(this);
 
     }
 
@@ -35,9 +42,22 @@ public class EditZoneActivity extends AppCompatActivity implements View.OnClickL
             Intent intent = new Intent(this, BathroomEditActivity.class);
             startActivity(intent);
 
+        }else if(id == R.id.edit_garden_button){
+
+            Intent intent = new Intent(this, BathroomEditActivity.class);
+            startActivity(intent);
+
+        }else if(id == R.id.edit_kitchen_button){
+
+            Intent intent = new Intent(this, BathroomEditActivity.class);
+            startActivity(intent);
+
+        }else if(id == R.id.edit_laundry_button){
+
+            Intent intent = new Intent(this, BathroomEditActivity.class);
+            startActivity(intent);
+
         }
-
-
 
     }
 

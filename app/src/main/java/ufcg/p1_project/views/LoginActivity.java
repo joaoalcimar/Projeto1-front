@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import ufcg.p1_project.R;
+import ufcg.p1_project.classes.User;
 import ufcg.p1_project.data.UserDataOpenHelper;
 import ufcg.p1_project.dominio.repositorio.LoginRepositorio;
 
@@ -31,6 +32,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
 
         this.mViewHolder.goToUserPlaceButton = findViewById(R.id.login_button);
         this.mViewHolder.userEt = findViewById(R.id.user_edit_text);
@@ -52,8 +54,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         user = mViewHolder.userEt.getText().toString();
         password = mViewHolder.passwordEt.getText().toString();
-        reg.loadMap();
-
 
         int id = v.getId();
         if (id == R.id.login_button) {
@@ -65,11 +65,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                    startActivity(intent);
                    alert("Logado com sucesso!");
 
-
                    //limpar essa seboseira dps
 
                    usplact.setLoggedUser(user);
-
 
                    resetTextFields();
 

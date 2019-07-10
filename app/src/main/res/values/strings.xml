@@ -121,5 +121,6 @@
     <string name="action_settings">Settings</string>
     <string name="registrar_ponto_de_vaz_o">Registrar ponto de vazão</string>
     <string name="lista_de_pontos_de_vaz_o">Lista de pontos de vazão</string>
+    <string name="title_activity_garden_panel">GardenPanelActivity</string>
 
 </resources>

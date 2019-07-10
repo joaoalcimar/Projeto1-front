@@ -35,8 +35,18 @@
             android:layout_height="120dp"
             android:layout_marginTop="120dp"
             android:layout_marginHorizontal="30dp"
-            android:text="Lista de zonas"
+            android:background="@drawable/zones_list_button"
             />
+
+        <TextView
+            android:id="@+id/zones_list_tv"
+            android:layout_width="150dp"
+            android:layout_height="50sp"
+            android:textSize="20sp"
+            android:text="Lista de zonas"
+            android:layout_below="@id/zones_list_button"
+            android:layout_marginLeft="30dp"
+            android:textColor="@color/cardview_dark_background" />
 
 
 
@@ -46,9 +56,18 @@
             android:layout_height="120dp"
             android:layout_marginHorizontal="30dp"
             android:layout_marginTop="30dp"
-            android:layout_below="@id/zones_list_button"
-            android:text="Editar zonas"
+            android:layout_below="@id/zones_list_tv"
+            android:background="@drawable/edit_zones_button"
             />
+
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="50sp"
+            android:textSize="20sp"
+            android:text="Editar zonas"
+            android:layout_below="@id/zones_edit_button"
+            android:layout_marginLeft="35dp"
+            android:textColor="@color/cardview_dark_background" />
 
 
 

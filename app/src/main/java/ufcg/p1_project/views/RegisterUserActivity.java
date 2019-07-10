@@ -1,11 +1,6 @@
 package ufcg.p1_project.views;
 
-
-import android.database.SQLException;
-import android.database.sqlite.SQLiteDatabase;
-import android.support.constraint.ConstraintLayout;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AlertDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -19,9 +14,6 @@ import java.lang.*;
 
 import ufcg.p1_project.R;
 import ufcg.p1_project.classes.User;
-import ufcg.p1_project.data.UserDataOpenHelper;
-import ufcg.p1_project.dominio.entidades.Login;
-import ufcg.p1_project.dominio.repositorio.LoginRepositorio;
 
 public class RegisterUserActivity extends AppCompatActivity implements View.OnClickListener{
     private ViewHolder mViewHolder = new ViewHolder();
@@ -29,18 +21,9 @@ public class RegisterUserActivity extends AppCompatActivity implements View.OnCl
     private String password;
     private String confirmPassword;
 
-    private SQLiteDatabase linker;
-    private UserDataOpenHelper userDataOpenHelper;
-    private ConstraintLayout layoutRegisterUser;
-
-    private LoginRepositorio loginRep;
-
-
 
     public static Map<String, User> usersData = new HashMap<String, User>();
     public static Properties properties = new Properties();
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,33 +35,6 @@ public class RegisterUserActivity extends AppCompatActivity implements View.OnCl
         this.mViewHolder.userEt = findViewById(R.id.registerUser_et);
         this.mViewHolder.passwordEt = findViewById(R.id.password_et);
         this.mViewHolder.confirmPasswordEt = findViewById(R.id.confirmPassword_et);
-
-        layoutRegisterUser = (ConstraintLayout) findViewById(R.id.layoutContextRegisterUser);
-
-        createLink();
-
-    }
-
-    private void createLink(){
-        try{
-
-            userDataOpenHelper = new UserDataOpenHelper(this);
-
-            linker = userDataOpenHelper.getWritableDatabase();
-
-            loginRep = new LoginRepositorio(linker);
-
-            Snackbar.make(layoutRegisterUser, "Conexão criada com sucesso", Snackbar.LENGTH_SHORT).setAction("OK", null).show();
-
-        }catch(SQLException ex){
-
-            AlertDialog.Builder dlg = new AlertDialog.Builder(this);
-            dlg.setTitle("Erro");
-            dlg.setMessage(ex.getMessage());
-            dlg.setNeutralButton("OK", null);
-            dlg.show();
-
-        }
 
 
     }
@@ -109,26 +65,12 @@ public class RegisterUserActivity extends AppCompatActivity implements View.OnCl
                 User newUser = new User(user,password);
                 usersData.put(user,newUser);
 
-
-                try {
-                    Login login = new Login();
-                    login.login = user;
-                    login.password = password;
-                    loginRep.inserir(login);
-
-                }catch (SQLException ex){
-
-                    AlertDialog.Builder dlg = new AlertDialog.Builder(this);
-                    dlg.setTitle("Erro");
-                    dlg.setMessage(ex.getMessage());
-                    dlg.setNeutralButton("OK", null);
-                    dlg.show();
-
-                }
-
                 saveMap();
                 resetTextFields();
                 alert("Cadastrado com sucesso!!");
+
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
 
             }
 

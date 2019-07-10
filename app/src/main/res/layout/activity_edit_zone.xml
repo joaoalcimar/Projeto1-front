@@ -22,7 +22,7 @@
             android:id="@+id/zonas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/zonas"
+            android:text="Editar Zonas"
             android:textColor="@color/colorPrimary"
             android:layout_centerHorizontal="true"
             android:textSize="30sp" />
@@ -37,6 +37,15 @@
             android:background="@drawable/bathroom_button"
             />
 
+        <TextView
+            android:layout_width="90sp"
+            android:layout_height="50sp"
+            android:textSize="20sp"
+            android:text="Banheiro"
+            android:layout_below="@id/edit_bathroom_button"
+            android:layout_marginLeft="60dp"
+            android:textColor="@color/cardview_dark_background" />
+
         <Button
             android:id="@+id/edit_kitchen_button"
             android:layout_width="120dp"
@@ -47,6 +56,15 @@
             android:background="@drawable/kitchen_button"
             />
 
+        <TextView
+            android:layout_width="90sp"
+            android:layout_height="50sp"
+            android:textSize="20sp"
+            android:text="Cozinha"
+            android:layout_below="@id/edit_kitchen_button"
+            android:layout_marginLeft="60dp"
+            android:textColor="@color/cardview_dark_background" />
+
         <Button
             android:id="@+id/edit_garden_button"
             android:layout_width="120dp"
@@ -55,6 +73,16 @@
             android:layout_toRightOf="@id/edit_bathroom_button"
             android:background="@drawable/garden_button"
             />
+
+        <TextView
+            android:layout_width="90sp"
+            android:layout_height="60dp"
+            android:textSize="20sp"
+            android:text="Jardim"
+            android:layout_below="@id/edit_garden_button"
+            android:layout_marginLeft="230dp"
+            android:textColor="@color/cardview_dark_background" />
+
 
         <Button
             android:id="@+id/edit_laundry_button"
@@ -65,6 +93,15 @@
             android:layout_below="@id/edit_garden_button"
             android:background="@drawable/laundry_button"
             />
+
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:textSize="20sp"
+            android:text="Lavanderia"
+            android:layout_below="@id/edit_laundry_button"
+            android:layout_marginLeft="210dp"
+            android:textColor="@color/cardview_dark_background" />
 
 
     </RelativeLayout>

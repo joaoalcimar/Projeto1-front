@@ -29,7 +29,7 @@ public class PlacesListActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_places_list);
 
-        reg.loadMap();
+//        reg.loadMap();
         meusImoveis = reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis();
 
         mViewHolder.listaImoveis = findViewById(R.id.lv_places);

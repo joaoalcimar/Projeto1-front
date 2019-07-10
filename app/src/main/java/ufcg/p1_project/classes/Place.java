@@ -9,7 +9,7 @@ public class Place {
     private String numero;
     private String bairro;
     private String custoLitro;
-    private ArrayList<Zone> zonesList = new ArrayList();
+    public static ArrayList<Zone> zonesList = new ArrayList();
 
     public ArrayList<Zone> getZonesList() {
         return zonesList;

@@ -34,10 +34,14 @@ public class BathroomPanelActivity extends AppCompatActivity {
         setContentView(R.layout.activity_bathroom_panel);
         reg.loadMap();
         ArrayList<Place> listaTemp = new ArrayList<>();
-        listaTemp =reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis();
+        System.out.println(reg.getUsersData() == null);
+        System.out.println(reg.getUsersData().get(upl.getLoggedUser()) == null);
+        System.out.println(reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis() == null);
+        System.out.println("acaba aqui");
+        listaTemp = reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis();
         for(int i = 0; i < listaTemp.size(); i++){
             if(listaTemp.get(i).getNome().equals(zome.getImovelAtual())){
-                indice = i;
+               indice = i;
                 pontosVazaoBanheiro = reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(i).getZonesList().get(0).getPontosDeVazao();
             }
 

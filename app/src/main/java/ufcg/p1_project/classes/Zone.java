@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Zone {
 
-    private ArrayList<FlowPoint> pontosDeVazao = new ArrayList();
+    public static ArrayList<FlowPoint> pontosDeVazao = new ArrayList();
     private FlowPointTypes tipo;
 
     public ArrayList <FlowPoint>getPontosDeVazao() {
