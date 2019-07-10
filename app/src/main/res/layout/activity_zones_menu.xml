@@ -15,9 +15,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        >
-
-
         <TextView
             android:id="@+id/zonas_menu"
             android:layout_width="wrap_content"
@@ -26,8 +23,6 @@
             android:textColor="@color/colorPrimary"
             android:layout_centerHorizontal="true"
             android:textSize="30sp" />
-
-
 
         <Button
             android:id="@+id/zones_list_button"
@@ -38,8 +33,6 @@
             android:text="Lista de zonas"
             />
 
-
-
         <Button
             android:id="@+id/zones_edit_button"
             android:layout_width="120dp"
@@ -47,15 +40,8 @@
             android:layout_marginHorizontal="30dp"
             android:layout_marginTop="30dp"
             android:layout_below="@id/zones_list_button"
-            android:text="Editar zonas"
+            android:text="@string/registrar_zonas"
             />
-
-
-
     </RelativeLayout>
-
-
-
-
 
 </android.support.constraint.ConstraintLayout>

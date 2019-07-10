@@ -15,9 +15,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        >
-
-
         <TextView
             android:id="@+id/lista_pontos_vazao_banheiro_text"
             android:layout_width="wrap_content"
@@ -35,16 +32,8 @@
             android:layout_height="fill_parent"
             android:paddingTop="30dp"
             android:layout_below="@id/lista_pontos_vazao_banheiro_text"
-
             >
 
         </ListView>
-
-
-
-
-
     </RelativeLayout>
-
-
 </android.support.constraint.ConstraintLayout>

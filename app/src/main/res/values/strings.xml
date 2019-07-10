@@ -26,7 +26,6 @@
     <string name="endere_o">Endereço</string>
     <string name="nome">Nome</string>
     <string name="zonas">Zonas</string>
-    <string name="registrar">Registrar</string>
     <string name="cadastro">Cadastro</string>
     <string name="title_activity_scrolling">ScrollingActivity</string>
     <string name="large_text">
@@ -121,5 +120,14 @@
     <string name="action_settings">Settings</string>
     <string name="registrar_ponto_de_vaz_o">Registrar ponto de vazão</string>
     <string name="lista_de_pontos_de_vaz_o">Lista de pontos de vazão</string>
+    <string name="registrar_zonas">Registrar Ponto de Vazão</string>
+    <string name="registrar">Registrar</string>
+    <string name="custo_do_litro_de_gua">Custo do litro de água</string>
+    <string name="bairro">Bairro</string>
+    <string name="n_mero">Número</string>
+    <string name="rua">Rua</string>
+    <string name="usu_rio">Usuário</string>
+    <string name="senha">Senha</string>
+    <string name="confirme_sua_senha">Confirme sua senha</string>
 
 </resources>

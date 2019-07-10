@@ -129,6 +129,7 @@ public class RegisterUserActivity extends AppCompatActivity implements View.OnCl
                 saveMap();
                 resetTextFields();
                 alert("Cadastrado com sucesso!!");
+                finish();
 
             }
 

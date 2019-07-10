@@ -15,11 +15,9 @@ import ufcg.p1_project.R;
 import ufcg.p1_project.classes.FlowPoint;
 import ufcg.p1_project.classes.Place;
 
-public class BathroomPanelActivity extends AppCompatActivity {
-
-
-    private ViewHolder mViewHolder = new ViewHolder();
-    public static ArrayList<FlowPoint> pontosVazaoBanheiro = new ArrayList();
+public class LaundryPanelActivity extends AppCompatActivity {
+    private LaundryPanelActivity.ViewHolder mViewHolder = new LaundryPanelActivity.ViewHolder();
+    public static ArrayList<FlowPoint> pontosVazao = new ArrayList();
     public static int indice;
 
     //limpar essa seboseira dps
@@ -27,34 +25,34 @@ public class BathroomPanelActivity extends AppCompatActivity {
     public RegisterUserActivity reg = new RegisterUserActivity();
     public UserPlaceActivity upl = new UserPlaceActivity();
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bathroom_panel);
+        setContentView(R.layout.activity_laundry_panel);
         reg.loadMap();
-        ArrayList<Place> listaTemp = new ArrayList<>();
-        listaTemp =reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis();
-        for(int i = 0; i < listaTemp.size(); i++){
-            if(listaTemp.get(i).getNome().equals(zome.getImovelAtual())){
+        ArrayList<Place> listaTemp = reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis();
+        for (int i = 0; i < listaTemp.size(); i++) {
+            if (listaTemp.get(i).getNome().equals(zome.getImovelAtual())) {
                 indice = i;
-                if(reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(i).getZonesList().isEmpty()){
-                    Toast.makeText(getApplicationContext(),"Sem pontos de vazão",Toast.LENGTH_SHORT).show();
-                }else{
-                    pontosVazaoBanheiro = reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(i).getZonesList().get(0).getPontosDeVazao();
+                if (reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(i).getZonesList().isEmpty()) {
+                    Toast.makeText(getApplicationContext(), "Sem pontos de vazão", Toast.LENGTH_SHORT).show();
+                } else {
+                    pontosVazao = reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(i).getZonesList().get(2).getPontosDeVazao();
                 }
 
             }
 
         }
 
-        mViewHolder.pontosVazaoBanheiroLv = findViewById(R.id.lv_flow_points_bathroom);
+        mViewHolder.pontosVazaoLv = findViewById(R.id.lv_flow_points_laundry);
+
         ArrayList<String> flowPointsListView = preencherListView();
+
         final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, flowPointsListView);
 
 
-        mViewHolder.pontosVazaoBanheiroLv.setAdapter(arrayAdapter);
-        mViewHolder.pontosVazaoBanheiroLv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        mViewHolder.pontosVazaoLv.setAdapter(arrayAdapter);
+        mViewHolder.pontosVazaoLv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
@@ -67,21 +65,22 @@ public class BathroomPanelActivity extends AppCompatActivity {
 
     }
 
-    public void alert(String message){
-        Toast.makeText(this,message,Toast.LENGTH_LONG).show();
+    public void alert(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
 
-    private ArrayList<String> preencherListView(){
+
+    private ArrayList<String> preencherListView() {
         ArrayList<String> temporaryList = new ArrayList<>();
-        for(int i = 0; i < pontosVazaoBanheiro.size(); i++){
-            temporaryList.add(reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(indice).getZonesList().get(0).getPontosDeVazao().get(i).getNome());
+        for (int i = 0; i < pontosVazao.size(); i++) {
+            temporaryList.add(reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(indice).getZonesList().get(2).getPontosDeVazao().get(i).getNome());
         }
         return temporaryList;
 
     }
 
-    private static class ViewHolder{
-        ListView pontosVazaoBanheiroLv;
+    private static class ViewHolder {
+        ListView pontosVazaoLv;
         ArrayList<String> dados = new ArrayList<String>();
 
 

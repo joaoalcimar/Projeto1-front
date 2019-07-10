@@ -11,13 +11,10 @@
         android:layout_height="fill_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="138dp"
         tools:layout_editor_absoluteY="113dp">
-
-        >
 
         <RelativeLayout
             android:layout_width="350dp"
@@ -30,11 +27,8 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="120dp"
-                android:text="Login"
-                android:textSize="40sp"
-
-
-                />
+                android:text="@string/login"
+                android:textSize="40sp" />
 
             <Button
                 android:id="@+id/login_button"
@@ -43,9 +37,7 @@
                 android:layout_below="@id/password_edit_text"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="60dp"
-                android:text="@string/logar"
-
-                />
+                android:text="@string/logar" />
 
             <EditText
                 android:id="@+id/user_edit_text"
@@ -63,16 +55,10 @@
                 android:layout_height="60dp"
                 android:layout_below="@id/user_edit_text"
                 android:layout_centerHorizontal="true"
-                android:hint="password"
+                android:hint="@string/prompt_password"
                 android:inputType="textPassword"
-                android:textAlignment="center"
-
-                />
+                android:textAlignment="center" />
 
         </RelativeLayout>
-
-
     </RelativeLayout>
-
-
 </android.support.constraint.ConstraintLayout>

@@ -63,14 +63,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                    Intent intent = new Intent(this, UserPlaceActivity.class);
                    startActivity(intent);
+                   finish();
                    alert("Logado com sucesso!");
 
-
                    //limpar essa seboseira dps
-
                    usplact.setLoggedUser(user);
-
-
                    resetTextFields();
 
                }

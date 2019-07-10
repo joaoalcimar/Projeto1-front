@@ -2,10 +2,9 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    tools:context=".views.KitchenPanelActivity">
-
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.LaundryPanelActivity">
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -15,7 +14,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/lista_pontos_vazao_cozinha_text"
+            android:id="@+id/lista_pontos_vazao_lavanderia_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/lista_de_pontos_de_vaz_o"
@@ -24,11 +23,11 @@
             android:layout_centerHorizontal="true" />
 
         <ListView
-            android:id="@+id/lv_flow_points_kitchen"
+            android:id="@+id/lv_flow_points_laundry"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:paddingTop="30dp"
-            android:layout_below="@id/lista_pontos_vazao_cozinha_text">
+            android:layout_below="@id/lista_pontos_vazao_lavanderia_text">
         </ListView>
 
     </RelativeLayout>

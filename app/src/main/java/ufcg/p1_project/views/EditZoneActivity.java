@@ -6,46 +6,59 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import ufcg.p1_project.R;
 
-public class EditZoneActivity extends AppCompatActivity implements View.OnClickListener{
+public class EditZoneActivity extends AppCompatActivity {
 
-    private ViewHolder mViewHolder = new ViewHolder();
+    @BindView(R.id.edit_bathroom_button)
+    /*default*/ Button mBathroomButton;
+    @BindView(R.id.edit_kitchen_button)
+    /*default*/ Button mKitchenButton;
+    @BindView(R.id.edit_garden_button)
+    /*default*/ Button mGardenButton;
+    @BindView(R.id.edit_laundry_button)
+    /*default*/ Button mLaundryButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_zone);
-
-        this.mViewHolder.goToEditBathroomButton = findViewById(R.id.edit_bathroom_button);
-        this.mViewHolder.goToEditBathroomButton.setOnClickListener(this);
-
-
-
+        ButterKnife.bind(this);
+        setOnClick();
     }
 
 
-    @Override
-    public void onClick(View v) {
+    private void setOnClick() {
 
+        mBathroomButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(EditZoneActivity.this, BathroomEditActivity.class);
+                startActivity(intent);
+            }
+        });
 
-        int id = v.getId();
-        if (id == R.id.edit_bathroom_button) {
+        mKitchenButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(EditZoneActivity.this, KitchenEditActivity.class);
+                startActivity(intent);
+            }
+        });
 
-            Intent intent = new Intent(this, BathroomEditActivity.class);
-            startActivity(intent);
+        mGardenButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(EditZoneActivity.this, GardenEditActivity.class);
+                startActivity(intent);
+            }
+        });
 
-        }
-
-
-
-    }
-
-    private static class ViewHolder{
-        Button goToEditBathroomButton;
-        Button goToEditKitchenButton;
-        Button goToEditGardenButton;
-        Button goToEditLaundryButton;
-
+        mLaundryButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent(EditZoneActivity.this, LaundryEditActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
