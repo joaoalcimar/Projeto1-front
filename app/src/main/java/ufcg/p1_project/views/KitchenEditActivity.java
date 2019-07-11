@@ -15,7 +15,7 @@ import ufcg.p1_project.classes.FlowPoint;
 import ufcg.p1_project.classes.Place;
 import ufcg.p1_project.classes.Zone;
 
-public class BathroomEditActivity extends AppCompatActivity implements View.OnClickListener{
+public class KitchenEditActivity extends AppCompatActivity implements View.OnClickListener{
 
 
     private Random gerador = new Random();
@@ -30,18 +30,18 @@ public class BathroomEditActivity extends AppCompatActivity implements View.OnCl
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bathroom_edit);
+        setContentView(R.layout.activity_kitchen_edit);
 
-        this.mViewHolder.nome = findViewById(R.id.ponto_vazao_banheiro_et);
+        this.mViewHolder.nome = findViewById(R.id.ponto_vazao_kitchen_et);
 
-        this.mViewHolder.botaoRegistrar = findViewById(R.id.register_new_flow_bathroom_button);
+        this.mViewHolder.botaoRegistrar = findViewById(R.id.register_new_flow_kitchen_button);
         this.mViewHolder.botaoRegistrar.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         int id = v.getId();
-        if (id == R.id.register_new_flow_bathroom_button) {
+        if (id == R.id.register_new_flow_kitchen_button) {
             if(mViewHolder.nome.getText().toString().equals("")){
                 alert("Preencha todos os campos!");
 
@@ -54,21 +54,21 @@ public class BathroomEditActivity extends AppCompatActivity implements View.OnCl
                 ArrayList<Place> listaTemp= reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis();
 
 
-                // AJEITAR PELO AMOR DE DEUS, considerando 0 banheiro
+                // AJEITAR PELO AMOR DE DEUS, considerando 0 cozinha
                 for(int i = 0; i < listaTemp.size(); i++){
                     if(listaTemp.get(i).getNome().equals(zome.getImovelAtual())){
                         Double randomval = (gerador.nextInt(2) + 2.0)/10;
                         if (reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(i).getZonesList().isEmpty()){
                             Zone z = new Zone();
                             reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(i).getZonesList().add(z);
-                            reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(i).getZonesList().get(0).getPontosDeVazao().add(newFlow);
+                            reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(i).getZonesList().get(2).getPontosDeVazao().add(newFlow);
 
-                            reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(i).getZonesList().get(0).getLitrosPontosDeVazao().add(randomval);
-                            reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(i).getZonesList().get(0).getPrecosPontosDeVazao().add((Double.parseDouble(reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(i).getCustoLitro()) * randomval));
+                            reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(i).getZonesList().get(2).getLitrosPontosDeVazao().add(randomval);
+                            reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(i).getZonesList().get(2).getPrecosPontosDeVazao().add((Double.parseDouble(reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(i).getCustoLitro()) * randomval));
                         }else{
-                            reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(i).getZonesList().get(0).getPontosDeVazao().add(newFlow);
-                            reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(i).getZonesList().get(0).getLitrosPontosDeVazao().add(randomval);
-                            reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(i).getZonesList().get(0).getPrecosPontosDeVazao().add((Double.parseDouble(reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(i).getCustoLitro()) * randomval));
+                            reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(i).getZonesList().get(2).getPontosDeVazao().add(newFlow);
+                            reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(i).getZonesList().get(2).getLitrosPontosDeVazao().add(randomval);
+                            reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(i).getZonesList().get(2).getPrecosPontosDeVazao().add((Double.parseDouble(reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(i).getCustoLitro()) * randomval));
                         }
 
                     }

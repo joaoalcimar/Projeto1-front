@@ -15,7 +15,7 @@ import ufcg.p1_project.classes.FlowPoint;
 import ufcg.p1_project.classes.Place;
 import ufcg.p1_project.classes.Zone;
 
-public class BathroomEditActivity extends AppCompatActivity implements View.OnClickListener{
+public class LaundryEditActivity extends AppCompatActivity implements View.OnClickListener{
 
 
     private Random gerador = new Random();
@@ -30,18 +30,18 @@ public class BathroomEditActivity extends AppCompatActivity implements View.OnCl
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bathroom_edit);
+        setContentView(R.layout.activity_laundry_edit);
 
-        this.mViewHolder.nome = findViewById(R.id.ponto_vazao_banheiro_et);
+        this.mViewHolder.nome = findViewById(R.id.ponto_vazao_laundry_et);
 
-        this.mViewHolder.botaoRegistrar = findViewById(R.id.register_new_flow_bathroom_button);
+        this.mViewHolder.botaoRegistrar = findViewById(R.id.register_new_flow_laundry_button);
         this.mViewHolder.botaoRegistrar.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         int id = v.getId();
-        if (id == R.id.register_new_flow_bathroom_button) {
+        if (id == R.id.register_new_flow_laundry_button) {
             if(mViewHolder.nome.getText().toString().equals("")){
                 alert("Preencha todos os campos!");
 
@@ -54,7 +54,7 @@ public class BathroomEditActivity extends AppCompatActivity implements View.OnCl
                 ArrayList<Place> listaTemp= reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis();
 
 
-                // AJEITAR PELO AMOR DE DEUS, considerando 0 banheiro
+                // AJEITAR PELO AMOR DE DEUS, considerando 0 lavanderia
                 for(int i = 0; i < listaTemp.size(); i++){
                     if(listaTemp.get(i).getNome().equals(zome.getImovelAtual())){
                         Double randomval = (gerador.nextInt(2) + 2.0)/10;

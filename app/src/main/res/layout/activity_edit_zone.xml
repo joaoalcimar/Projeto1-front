@@ -9,14 +9,10 @@
     <RelativeLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
-
-        >
-
 
         <TextView
             android:id="@+id/zonas"
@@ -34,8 +30,7 @@
             android:layout_height="120dp"
             android:layout_marginHorizontal="40dp"
             android:layout_marginTop="80dp"
-            android:background="@drawable/bathroom_button"
-            />
+            android:background="@drawable/bathroom_button" />
 
         <TextView
             android:layout_width="90sp"
@@ -53,8 +48,7 @@
             android:layout_marginHorizontal="40dp"
             android:layout_marginTop="60dp"
             android:layout_below="@id/edit_bathroom_button"
-            android:background="@drawable/kitchen_button"
-            />
+            android:background="@drawable/kitchen_button" />
 
         <TextView
             android:layout_width="90sp"
@@ -103,7 +97,5 @@
             android:layout_marginLeft="210dp"
             android:textColor="@color/cardview_dark_background" />
 
-
-    </RelativeLayout>
-
+</RelativeLayout>
 </android.support.constraint.ConstraintLayout>

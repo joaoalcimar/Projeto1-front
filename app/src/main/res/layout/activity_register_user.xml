@@ -19,14 +19,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        >
-
         <RelativeLayout
             android:layout_width="350dp"
             android:layout_height="fill_parent"
             android:layout_centerInParent="true"
-            android:background="@drawable/blue_border"
-            >
+            android:background="@drawable/blue_border">
 
             <TextView
                 android:id="@+id/cadastro_tv"
@@ -35,10 +32,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="120dp"
                 android:textSize="40sp"
-                android:text="@string/cadastro"
-
-
-                />
+                android:text="@string/cadastro" />
 
             <TextView
                 android:layout_width="fill_parent"
@@ -47,7 +41,7 @@
                 android:layout_centerHorizontal="true"
                 android:paddingLeft="70dp"
                 android:paddingTop="50dp"
-                android:text="Usuário"
+                android:text="@string/usu_rio"
 
                 />
 
@@ -58,8 +52,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="60dp"
                 android:layout_below="@id/cadastro_tv"
-
-                />
+                android:inputType="textEmailAddress"/>
 
             <TextView
                 android:layout_width="fill_parent"
@@ -68,9 +61,7 @@
                 android:layout_centerHorizontal="true"
                 android:paddingLeft="70dp"
                 android:paddingTop="20dp"
-                android:text="Senha"
-
-                />
+                android:text="@string/senha" />
 
             <EditText
                 android:id="@+id/password_et"
@@ -90,9 +81,7 @@
                 android:layout_centerHorizontal="true"
                 android:paddingLeft="70dp"
                 android:paddingTop="20dp"
-                android:text="Confirme sua senha"
-
-                />
+                android:text="@string/confirme_sua_senha" />
 
             <EditText
                 android:id="@+id/confirmPassword_et"
@@ -101,9 +90,7 @@
                 android:inputType="textPassword"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20dp"
-                android:layout_below="@id/password_et"
-
-                />
+                android:layout_below="@id/password_et" />
 
             <Button
                 android:id="@+id/registerUser_button"
@@ -112,15 +99,9 @@
                 android:layout_below="@id/confirmPassword_et"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="30dp"
-                android:text="@string/registrar"
-
-                />
-
-
+                android:text="@string/registrar" />
 
         </RelativeLayout>
-        />
-
 
     </RelativeLayout>
 

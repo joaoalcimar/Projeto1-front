@@ -7,41 +7,42 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Random;
 
 import ufcg.p1_project.R;
 import ufcg.p1_project.classes.FlowPoint;
 import ufcg.p1_project.classes.Place;
+import ufcg.p1_project.classes.User;
 import ufcg.p1_project.classes.Zone;
 
-public class BathroomEditActivity extends AppCompatActivity implements View.OnClickListener{
+public class GardenEditActivity extends AppCompatActivity implements View.OnClickListener{
 
-
-    private Random gerador = new Random();
-    private ViewHolder mViewHolder = new ViewHolder();
+    private GardenEditActivity.ViewHolder mViewHolder = new GardenEditActivity.ViewHolder();
 
     //limpar essa seboseira dps
     public ZonesMenuActivity zome = new ZonesMenuActivity();
     public RegisterUserActivity reg = new RegisterUserActivity();
     public UserPlaceActivity upl = new UserPlaceActivity();
 
+    private Random gerador = new Random();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bathroom_edit);
+        setContentView(R.layout.activity_garden_edit);
 
-        this.mViewHolder.nome = findViewById(R.id.ponto_vazao_banheiro_et);
+        this.mViewHolder.nome = findViewById(R.id.ponto_vazao_garden_et);
 
-        this.mViewHolder.botaoRegistrar = findViewById(R.id.register_new_flow_bathroom_button);
+        this.mViewHolder.botaoRegistrar = findViewById(R.id.register_new_flow_garden_button);
         this.mViewHolder.botaoRegistrar.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         int id = v.getId();
-        if (id == R.id.register_new_flow_bathroom_button) {
+        if (id == R.id.register_new_flow_garden_button) {
             if(mViewHolder.nome.getText().toString().equals("")){
                 alert("Preencha todos os campos!");
 
@@ -54,21 +55,22 @@ public class BathroomEditActivity extends AppCompatActivity implements View.OnCl
                 ArrayList<Place> listaTemp= reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis();
 
 
-                // AJEITAR PELO AMOR DE DEUS, considerando 0 banheiro
+                // AJEITAR PELO AMOR DE DEUS
                 for(int i = 0; i < listaTemp.size(); i++){
                     if(listaTemp.get(i).getNome().equals(zome.getImovelAtual())){
+
                         Double randomval = (gerador.nextInt(2) + 2.0)/10;
                         if (reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(i).getZonesList().isEmpty()){
                             Zone z = new Zone();
                             reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(i).getZonesList().add(z);
-                            reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(i).getZonesList().get(0).getPontosDeVazao().add(newFlow);
+                            reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(i).getZonesList().get(1).getPontosDeVazao().add(newFlow);
 
-                            reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(i).getZonesList().get(0).getLitrosPontosDeVazao().add(randomval);
-                            reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(i).getZonesList().get(0).getPrecosPontosDeVazao().add((Double.parseDouble(reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(i).getCustoLitro()) * randomval));
+                            reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(i).getZonesList().get(1).getLitrosPontosDeVazao().add(randomval);
+                            reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(i).getZonesList().get(1).getPrecosPontosDeVazao().add((Double.parseDouble(reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(i).getCustoLitro()) * randomval));
                         }else{
-                            reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(i).getZonesList().get(0).getPontosDeVazao().add(newFlow);
-                            reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(i).getZonesList().get(0).getLitrosPontosDeVazao().add(randomval);
-                            reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(i).getZonesList().get(0).getPrecosPontosDeVazao().add((Double.parseDouble(reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(i).getCustoLitro()) * randomval));
+                            reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(i).getZonesList().get(1).getPontosDeVazao().add(newFlow);
+                            reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(i).getZonesList().get(1).getLitrosPontosDeVazao().add(randomval);
+                            reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(i).getZonesList().get(1).getPrecosPontosDeVazao().add((Double.parseDouble(reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(i).getCustoLitro()) * randomval));
                         }
 
                     }

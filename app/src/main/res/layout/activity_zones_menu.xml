@@ -15,9 +15,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        >
-
-
         <TextView
             android:id="@+id/zonas_menu"
             android:layout_width="wrap_content"
@@ -26,8 +23,6 @@
             android:textColor="@color/colorPrimary"
             android:layout_centerHorizontal="true"
             android:textSize="30sp" />
-
-
 
         <Button
             android:id="@+id/zones_list_button"
@@ -47,8 +42,6 @@
             android:layout_below="@id/zones_list_button"
             android:layout_marginLeft="30dp"
             android:textColor="@color/cardview_dark_background" />
-
-
 
         <Button
             android:id="@+id/zones_edit_button"
@@ -72,9 +65,5 @@
 
 
     </RelativeLayout>
-
-
-
-
 
 </android.support.constraint.ConstraintLayout>

@@ -4,7 +4,6 @@
     package="ufcg.p1_project">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -14,25 +13,78 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".views.LaundryPanelActivity"></activity>
+        <activity
+            android:name=".views.LaundryEditActivity"
+            android:parentActivityName=".views.EditZoneActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.GardenEditActivity"
+            android:parentActivityName=".views.EditZoneActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.KitchenEditActivity"
+            android:parentActivityName=".views.EditZoneActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.LaundryPanelActivity"
+            android:parentActivityName=".views.ZonesListActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".views.GardenPanelActivity"
-            android:label="@string/title_activity_garden_panel"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".views.BathroomPanelActivity" />
-        <activity android:name=".views.BathroomEditActivity" />
-        <activity android:name=".views.EditZoneActivity" />
-        <activity android:name=".views.KitchenPanelActivity" />
-        <activity android:name=".views.ZonesMenuActivity" />
-        <activity android:name=".views.RegisterUserActivity" />
-        <activity android:name=".views.ZonesListActivity" />
-        <activity android:name=".views.PlacesListActivity" />
-        <activity android:name=".views.EditPlaceInfoActivity" />
-        <activity android:name=".views.RegisterPlaceActivity" />
-        <activity android:name=".views.UserPlaceActivity" />
-        <activity android:name=".views.StatisticsActivity" />
-        <activity android:name=".views.LoginActivity" />
-        <activity android:name=".views.MainActivity">
+            android:parentActivityName=".views.ZonesListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.BathroomPanelActivity"
+            android:parentActivityName=".views.ZonesListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.BathroomEditActivity"
+            android:parentActivityName=".views.EditZoneActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.EditZoneActivity"
+            android:parentActivityName=".views.ZonesMenuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.KitchenPanelActivity"
+            android:parentActivityName=".views.ZonesListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.ZonesMenuActivity"
+            android:parentActivityName=".views.PlacesListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.RegisterUserActivity"
+            android:parentActivityName=".views.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.ZonesListActivity"
+            android:parentActivityName=".views.ZonesMenuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.PlacesListActivity"
+            android:parentActivityName=".views.UserPlaceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.EditPlaceInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.RegisterPlaceActivity"
+            android:parentActivityName=".views.UserPlaceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.UserPlaceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.StatisticsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.LoginActivity"
+            android:parentActivityName=".views.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".views.MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

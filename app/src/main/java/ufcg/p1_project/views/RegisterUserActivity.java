@@ -68,6 +68,7 @@ public class RegisterUserActivity extends AppCompatActivity implements View.OnCl
                 saveMap();
                 resetTextFields();
                 alert("Cadastrado com sucesso!!");
+                finish();
 
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);

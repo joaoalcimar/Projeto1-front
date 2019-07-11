@@ -15,9 +15,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        >
-
-
         <TextView
             android:id="@+id/lista_pontos_vazao_banheiro_text"
             android:layout_width="wrap_content"
@@ -31,20 +28,31 @@
 
         <ListView
             android:id="@+id/lv_flow_points_bathroom"
-            android:layout_width="fill_parent"
+            android:layout_width="150dp"
             android:layout_height="fill_parent"
             android:paddingTop="30dp"
             android:layout_below="@id/lista_pontos_vazao_banheiro_text"
+            />
 
-            >
+        <ListView
+            android:id="@+id/lv_flow_points_spent_litters_bathroom"
+            android:layout_width="120dp"
+            android:layout_height="fill_parent"
+            android:layout_toRightOf="@id/lv_flow_points_bathroom"
+            android:paddingTop="30dp"
+            android:layout_below="@id/lista_pontos_vazao_banheiro_text"
+            />
 
-        </ListView>
-
-
+        <ListView
+            android:id="@+id/lv_flow_points_spent_money_bathroom"
+            android:layout_width="100dp"
+            android:layout_height="fill_parent"
+            android:layout_toRightOf="@id/lv_flow_points_spent_litters_bathroom"
+            android:paddingTop="30dp"
+            android:layout_below="@id/lista_pontos_vazao_banheiro_text"
+            />
 
 
 
     </RelativeLayout>
-
-
 </android.support.constraint.ConstraintLayout>

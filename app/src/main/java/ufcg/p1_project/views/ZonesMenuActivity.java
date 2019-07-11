@@ -36,12 +36,12 @@ public class ZonesMenuActivity extends AppCompatActivity implements View. OnClic
         int id = v.getId();
         if (id == R.id.zones_list_button) {
 
-            Intent intent = new Intent(this, ZonesListActivity.class);
+            Intent intent = new Intent(ZonesMenuActivity.this, ZonesListActivity.class);
             startActivity(intent);
 
         }else if(id == R.id.zones_edit_button){
 
-            Intent intent = new Intent(this, EditZoneActivity.class);
+            Intent intent = new Intent(ZonesMenuActivity.this, EditZoneActivity.class);
             startActivity(intent);
 
         }
