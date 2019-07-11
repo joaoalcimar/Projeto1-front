@@ -41,7 +41,7 @@
                 android:layout_centerHorizontal="true"
                 android:paddingLeft="70dp"
                 android:paddingTop="50dp"
-                android:text="@string/usu_rio"
+                android:text="Usuário"
 
                 />
 
@@ -61,7 +61,7 @@
                 android:layout_centerHorizontal="true"
                 android:paddingLeft="70dp"
                 android:paddingTop="20dp"
-                android:text="@string/senha" />
+                android:text="Senha" />
 
             <EditText
                 android:id="@+id/password_et"
@@ -81,7 +81,7 @@
                 android:layout_centerHorizontal="true"
                 android:paddingLeft="70dp"
                 android:paddingTop="20dp"
-                android:text="@string/confirme_sua_senha" />
+                android:text="Confirme sua senha" />
 
             <EditText
                 android:id="@+id/confirmPassword_et"

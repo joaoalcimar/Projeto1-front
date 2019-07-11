@@ -5,60 +5,69 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
 import ufcg.p1_project.R;
 
-public class EditZoneActivity extends AppCompatActivity {
+public class EditZoneActivity extends AppCompatActivity implements View.OnClickListener {
 
-    @BindView(R.id.edit_bathroom_button)
-    /*default*/ Button mBathroomButton;
-    @BindView(R.id.edit_kitchen_button)
-    /*default*/ Button mKitchenButton;
-    @BindView(R.id.edit_garden_button)
-    /*default*/ Button mGardenButton;
-    @BindView(R.id.edit_laundry_button)
-    /*default*/ Button mLaundryButton;
-
+    private ViewHolder mViewHolder = new ViewHolder();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_zone);
-        ButterKnife.bind(this);
-        setOnClick();
+
+        this.mViewHolder.goToEditBathroomButton = findViewById(R.id.edit_bathroom_button);
+        this.mViewHolder.goToEditKitchenButton = findViewById(R.id.edit_kitchen_button);
+        this.mViewHolder.goToEditGardenButton = findViewById(R.id.edit_garden_button);
+        this.mViewHolder.goToEditLaundryButton = findViewById(R.id.edit_laundry_button);
+
+
+        this.mViewHolder.goToEditBathroomButton.setOnClickListener(this);
+        this.mViewHolder.goToEditKitchenButton.setOnClickListener(this);
+        this.mViewHolder.goToEditGardenButton.setOnClickListener(this);
+        this.mViewHolder.goToEditLaundryButton.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View view) {
+
+        int id = view.getId();
+        if (id == R.id.edit_bathroom_button) {
+
+            Intent intent = new Intent(this, BathroomEditActivity.class);
+            startActivity(intent);
+
+        } else if (id == R.id.edit_kitchen_button) {
+
+            Intent intent = new Intent(this, KitchenEditActivity.class);
+            startActivity(intent);
+
+        } else if (id == R.id.edit_laundry_button) {
+
+            Intent intent = new Intent(this, LaundryEditActivity.class);
+            startActivity(intent);
+
+        } else if (id == R.id.edit_garden_button) {
+
+            Intent intent = new Intent(this, GardenEditActivity.class);
+            startActivity(intent);
+
+        }
+
     }
 
 
-    private void setOnClick() {
 
-        mBathroomButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent intent = new Intent(EditZoneActivity.this, BathroomEditActivity.class);
-                startActivity(intent);
-            }
-        });
+    private static class ViewHolder{
+        Button goToEditBathroomButton;
+        Button goToEditLaundryButton;
+        Button goToEditKitchenButton;
+        Button goToEditGardenButton;
 
-        mKitchenButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent intent = new Intent(EditZoneActivity.this, KitchenEditActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        mGardenButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent intent = new Intent(EditZoneActivity.this, GardenEditActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        mLaundryButton.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Intent intent = new Intent(EditZoneActivity.this, LaundryEditActivity.class);
-                startActivity(intent);
-            }
-        });
     }
+
+
+
 }
