@@ -9,7 +9,7 @@ public class Place {
     private String numero;
     private String bairro;
     private String custoLitro;
-    public static ArrayList<Zone> zonesList = new ArrayList(){
+    public  ArrayList<Zone> zonesList = new ArrayList(){
         Zone banheiro = new Zone();
         Zone jardim = new Zone();
         Zone cozinha = new Zone();

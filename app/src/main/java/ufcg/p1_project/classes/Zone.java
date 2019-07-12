@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class Zone {
 
-    public static ArrayList<FlowPoint> pontosDeVazao = new ArrayList();
-    public static ArrayList<Double> litrosPontosDeVazao = new ArrayList();
-    public static ArrayList<Double> precosPontosDeVazao = new ArrayList();
+    public ArrayList<FlowPoint> pontosDeVazao = new ArrayList();
+    public ArrayList<Double> litrosPontosDeVazao = new ArrayList();
+    public ArrayList<Double> precosPontosDeVazao = new ArrayList();
     private FlowPointTypes tipo;
 
     public ArrayList <FlowPoint>getPontosDeVazao() {
@@ -30,7 +30,7 @@ public class Zone {
     }
 
     public static void setLitrosPontosDeVazao(ArrayList<Double> litrosPontosDeVazao) {
-        Zone.litrosPontosDeVazao = litrosPontosDeVazao;
+        litrosPontosDeVazao = litrosPontosDeVazao;
     }
 
     public ArrayList<Double> getPrecosPontosDeVazao() {
@@ -38,6 +38,6 @@ public class Zone {
     }
 
     public static void setPrecosPontosDeVazao(ArrayList<Double> precosPontosDeVazao) {
-        Zone.precosPontosDeVazao = precosPontosDeVazao;
+        precosPontosDeVazao = precosPontosDeVazao;
     }
 }

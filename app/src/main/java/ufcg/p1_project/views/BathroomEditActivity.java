@@ -13,6 +13,7 @@ import java.util.Random;
 import ufcg.p1_project.R;
 import ufcg.p1_project.classes.FlowPoint;
 import ufcg.p1_project.classes.Place;
+import ufcg.p1_project.classes.User;
 import ufcg.p1_project.classes.Zone;
 
 public class BathroomEditActivity extends AppCompatActivity implements View.OnClickListener{
@@ -66,6 +67,8 @@ public class BathroomEditActivity extends AppCompatActivity implements View.OnCl
                             reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(i).getZonesList().get(0).getLitrosPontosDeVazao().add(randomval);
                             reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(i).getZonesList().get(0).getPrecosPontosDeVazao().add((Double.parseDouble(reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(i).getCustoLitro()) * randomval));
                         }else{
+
+
                             reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(i).getZonesList().get(0).getPontosDeVazao().add(newFlow);
                             reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(i).getZonesList().get(0).getLitrosPontosDeVazao().add(randomval);
                             reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(i).getZonesList().get(0).getPrecosPontosDeVazao().add((Double.parseDouble(reg.getUsersData().get(upl.getLoggedUser()).getListaImoveis().get(i).getCustoLitro()) * randomval));
